@@ -59,3 +59,31 @@ const works_swiper = new Swiper('#works_inner', {
 Fancybox.bind("[data-fancybox]", {
   // 옵션 (필요 시)
 });
+
+// About 내부가 긴 화면에서는 먼저 내용을 스크롤하고, 끝에서 다음 섹션으로 이동합니다.
+const aboutScroll = document.querySelector('#about .about-scroll');
+aboutScroll.addEventListener('wheel', (event) => {
+  const canScrollDown = aboutScroll.scrollTop + aboutScroll.clientHeight < aboutScroll.scrollHeight - 1;
+  const canScrollUp = aboutScroll.scrollTop > 0;
+  if ((event.deltaY > 0 && canScrollDown) || (event.deltaY < 0 && canScrollUp)) {
+    event.stopPropagation();
+  }
+}, { passive: true });
+
+document.querySelectorAll('[data-about-contact]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    wrap_swiper.slideTo(3);
+  });
+});
+
+document.querySelectorAll('#about .about-index a:not([data-about-contact])').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    aboutScroll.scrollTo({
+      top: target.getBoundingClientRect().top - aboutScroll.getBoundingClientRect().top + aboutScroll.scrollTop - 24,
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
+    });
+  });
+});

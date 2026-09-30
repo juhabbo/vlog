@@ -1,0 +1,66 @@
+#wrap #about {
+  display: block;
+  background: #fff;
+  color: #382b24;
+  font-family: "Pretendard Variable", Pretendard, sans-serif;
+}
+#about * { box-sizing: border-box; }
+#about .about-scroll { height: 100%; overflow-y: auto; padding-top: 60px; scrollbar-width: thin; }
+#about .about-hero { display: grid; grid-template-columns: 42% 58%; min-height: 380px; height: 52%; }
+#about .about-intro { padding: 36px 30px 0; width: 100%; max-width: 370px; justify-self: center; }
+#about .about-eyebrow { font-size: 10px; letter-spacing: 2px; color: #8c7566; margin-bottom: 20px; }
+#about h2 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(54px, 5.3vw, 84px); font-weight: 500; line-height: .9; letter-spacing: -2px; margin-bottom: 30px; }
+#about .about-lead { font-size: 14px; font-weight: 700; margin-bottom: 22px; }
+#about .about-copy { font-size: 12px; line-height: 1.9; color: #81766e; }
+#about .about-note { margin-top: 30px; font-size: 11px; color: #9b8d82; font-style: italic; line-height: 1.7; }
+#about .about-note::before { content: ""; display: block; width: 22px; height: 1px; background: #d4c7bd; margin-bottom: 18px; }
+#about .about-photo { position: relative; overflow: hidden; margin: 0; min-height: 380px; }
+#about .about-photo > img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; }
+#about .about-index { position: absolute; right: 5%; top: 13%; display: grid; gap: 25px; }
+#about .about-index a { display: grid; color: #77614f; font-size: 8px; letter-spacing: .4px; line-height: 1.7; }
+#about a:focus-visible, #about button:focus-visible { outline: 2px solid #876952; outline-offset: 5px; }
+#about .about-info { max-width: 1320px; width: 84%; margin: 0 auto; padding: 0 0 40px; }
+#about .about-info-label { font-family: Georgia, serif; font-size: 20px; font-weight: 400; color: #8c8177; margin: 0 0 8px; }
+#about .about-columns { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
+#about .about-column h4 { font-size: 10px; letter-spacing: 1.5px; border-bottom: 1px solid #dcd2c9; padding-bottom: 8px; margin-bottom: 20px; }
+#about .about-profile { display: grid; grid-template-columns: 68px 1fr; gap: 5px 10px; font-size: 11px; color: #8c8177; }
+#about .about-profile dd { margin: 0; overflow-wrap: anywhere; }
+#about .about-social { display: flex; gap: 10px; color: #382b24; }
+#about .about-social i { font-size: 17px; }
+#about .about-contact { display: inline-flex; align-items: center; gap: 18px; background: transparent; border: 1px solid #bcaa9b; border-radius: 30px; padding: 8px 16px; margin-top: 28px; color: #876952; font: inherit; font-size: 10px; letter-spacing: 1px; cursor: pointer; }
+#about .about-contact:hover { background: #f5f1ed; }
+#about .about-small-title { font-size: 11px; font-weight: 600; margin-bottom: 14px; }
+#about .about-tools { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 30px; }
+#about .about-tools li { text-align: center; color: #8c8177; font-size: 9px; line-height: 1.4; }
+#about .about-tools img { width: 42px; height: 42px; display: block; margin: 0 auto 8px; }
+#about .about-skill { display: grid; grid-template-columns: 96px 1fr 30px; align-items: center; gap: 8px; margin-bottom: 10px; font-size: 10px; color: #8c8177; }
+#about .about-skill meter { width: 100%; height: 4px; border: 0; border-radius: 0; appearance: none; background: #e1d8d0; }
+#about .about-skill meter::-webkit-meter-bar { background: #e1d8d0; height: 4px; border: none; border-radius: 0; }
+#about .about-skill meter::-webkit-meter-optimum-value { background: #937257; }
+#about .about-skill meter::-moz-meter-bar { background: #937257; }
+#about .about-timeline li { display: grid; grid-template-columns: 72px 1fr; gap: 16px; margin-bottom: 26px; font-size: 10px; }
+#about .about-timeline time { color: #8c8177; white-space: nowrap; }
+#about .about-timeline div { position: relative; padding-left: 16px; }
+#about .about-timeline div::before { content: ""; position: absolute; left: 0; top: 6px; width: 5px; height: 5px; border-radius: 50%; background: #876952; }
+#about .about-timeline strong { display: block; font-size: 11px; margin-bottom: 7px; }
+#about .about-timeline p { color: #8c8177; line-height: 1.7; }
+#about .about-interests li { display: grid; grid-template-columns: 20px 1fr; gap: 12px; margin-bottom: 18px; font-size: 11px; color: #8c8177; line-height: 1.7; }
+#about .about-interests span { color: #876952; font-size: 15px; }
+#about .about-detail { width: 100%; display: block; height: auto; margin-top: 16px; border-radius: 10px; }
+@media (min-width: 1600px) { #about .about-intro { padding-top: 55px; } #about .about-info { padding-top: 10px; } }
+@media (max-width: 1100px) {
+  #about .about-hero { height: auto; min-height: 400px; }
+  #about .about-intro { padding: 30px 24px; }
+  #about .about-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+  #about .about-info { padding-top: 24px; }
+}
+@media (max-width: 600px) {
+  #about .about-hero { grid-template-columns: 1fr; }
+  #about .about-intro { max-width: none; padding: 36px 8%; }
+  #about h2 { font-size: 64px; }
+  #about .about-photo { height: auto; min-height: 0; aspect-ratio: 1.8; }
+  #about .about-index { top: 10%; gap: 10px; }
+  #about .about-columns { grid-template-columns: 1fr; gap: 32px; }
+  #about .about-tools { max-width: 300px; }
+  #about .about-skill { grid-template-columns: 110px 1fr 30px; }
+}
