@@ -59,3 +59,23 @@ const works_swiper = new Swiper('#works_inner', {
 Fancybox.bind("[data-fancybox]", {
   // 옵션 (필요 시)
 });
+
+// The About panel scrolls independently on short and narrow screens.
+const aboutScroll = document.querySelector('.about-scroll');
+aboutScroll.addEventListener('wheel', (event) => {
+  const atTop = aboutScroll.scrollTop <= 1;
+  const atBottom = aboutScroll.scrollTop + aboutScroll.clientHeight >= aboutScroll.scrollHeight - 1;
+  if ((event.deltaY < 0 && !atTop) || (event.deltaY > 0 && !atBottom)) {
+    event.stopPropagation();
+  }
+}, { passive: true });
+document.querySelectorAll('[data-about-contact]').forEach((button) => {
+  button.addEventListener('click', () => wrap_swiper.slideTo(3));
+});
+document.querySelectorAll('.about-index a').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    aboutScroll.scrollTo({ top: target.offsetTop - aboutScroll.offsetTop - 20, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  });
+});
