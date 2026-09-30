@@ -1,0 +1,75 @@
+/* About layout from the supplied Figma screenshot. */
+#wrap #about { display:block; background:#fff; color:#3a2d25; padding-top:60px; box-sizing:border-box; }
+#about * { box-sizing:border-box; }
+#about .about-scroll { height:100%; overflow:auto; overscroll-behavior:contain; scrollbar-width:thin; scroll-behavior:smooth; }
+#about .about-hero { display:grid; grid-template-columns:42.5% 57.5%; position:relative; min-height:420px; height:54%; }
+#about .about-intro { padding:38px 30px 20px clamp(40px,15.5vw,260px); }
+#about .about-eyebrow { font-size:10px; letter-spacing:2px; color:#957864; margin-bottom:20px; }
+#about h2 { font-family:Georgia,'Times New Roman',serif; font-size:clamp(56px,5.5vw,92px); line-height:.88; font-weight:500; letter-spacing:-2px; margin-bottom:28px; }
+#about .about-lead { font-size:13px; font-weight:700; margin-bottom:22px; }
+#about .about-description { font-size:11px; color:#827972; line-height:1.85; }
+#about .about-motto { font-size:10px; font-style:italic; color:#958a81; margin-top:28px; }
+#about .about-motto::before { content:''; display:block; width:22px; height:1px; background:#d9ccc2; margin-bottom:18px; }
+#about .about-portrait { width:100%; height:100%; min-height:0; object-fit:cover; object-position:center; }
+#about .about-index { position:absolute; right:24px; top:55px; display:grid; gap:30px; width:65px; }
+#about .about-index a,#about .about-index button { text-align:left; font:inherit; font-size:8px; color:#8d7c6e; background:none; border:0; cursor:pointer; }
+#about .about-index span { display:block; font-size:9px; margin-bottom:3px; }
+#about .about-info { padding:0 8.3% 34px; }
+#about .about-info-label { color:#a79b91; font-size:18px; line-height:1.5; }
+#about .about-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:32px; }
+#about .about-column { scroll-margin-top:20px; min-width:0; }
+#about h3 { font-size:10px; letter-spacing:2px; border-bottom:1px solid #ded5ce; padding:9px 0; margin-bottom:20px; }
+#about h4 { font-size:10px; font-weight:700; margin-bottom:12px; }
+#about .about-profile-list { display:grid; grid-template-columns:70px minmax(0,1fr); row-gap:7px; font-size:10px; color:#887f77; }
+#about dd { overflow-wrap:anywhere; }
+#about .about-social { display:flex; gap:12px; align-items:center; font-size:18px; color:#111; }
+#about .xi-facebook { color:#1877f2; }
+#about .xi-linkedin { color:#0a66c2; }
+#about .about-contact { margin-top:26px; padding:8px 16px; border:1px solid #beaa99; border-radius:24px; background:#fff; color:#886d58; font-size:9px; letter-spacing:1.5px; cursor:pointer; }
+#about .about-contact span { margin-left:12px; }
+#about .about-tools { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:25px; text-align:center; }
+#about .about-tools img { width:42px; height:42px; display:block; margin:0 auto 7px; }
+#about .about-tools span { display:block; font-size:9px; color:#8a8077; line-height:1.3; }
+#about .about-skill-list li { display:grid; grid-template-columns:96px 1fr 30px; gap:9px; align-items:center; margin-bottom:9px; font-size:9px; color:#82776f; }
+#about meter { width:100%; height:5px; border:0; background:#dfd8d2; border-radius:5px; }
+#about meter::-webkit-meter-bar { background:#dfd8d2; border:0; height:5px; }
+#about meter::-webkit-meter-optimum-value { background:#947357; }
+#about meter::-moz-meter-bar { background:#947357; }
+#about .about-timeline li { display:grid; grid-template-columns:76px 1fr; gap:20px; margin-bottom:26px; }
+#about .about-year { font-size:9px; color:#8b8179; white-space:nowrap; }
+#about .about-timeline li>div { position:relative; }
+#about .about-timeline li>div::before { content:''; position:absolute; left:-14px; top:5px; width:5px; height:5px; background:#84674f; border-radius:50%; }
+#about .about-timeline h4 { margin-bottom:7px; line-height:1.5; }
+#about .about-timeline p,#about .about-more p { font-size:10px; color:#8a8077; line-height:1.8; }
+#about .about-more li { display:flex; align-items:center; gap:18px; margin-bottom:18px; }
+#about .about-more li>span { color:#7e644f; font-size:15px; }
+#about .about-detail { display:block; width:100%; border-radius:10px; margin-top:16px; }
+#about a:hover,#about button:hover { color:#543c28; }
+#about a:focus-visible,#about button:focus-visible,#about .about-scroll:focus-visible { outline:2px solid #947357; outline-offset:3px; }
+@media(max-width:1100px) {
+ #about .about-intro { padding-left:9vw; }
+ #about .about-info { padding-left:5%; padding-right:5%; }
+ #about .about-grid { gap:22px; }
+ #about .about-skill-list li { grid-template-columns:76px 1fr 25px; gap:6px; }
+ #about .about-timeline li { grid-template-columns:64px 1fr; gap:18px; }
+}
+@media(max-width:800px) {
+ #about .about-hero { min-height:400px; height:auto; }
+ #about .about-intro { padding:40px 24px; }
+ #about h2 { font-size:60px; }
+ #about .about-index { right:10px; width:55px; }
+ #about .about-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:30px; }
+ #about .about-info { padding-top:18px; }
+}
+@media(max-width:520px) {
+ #about .about-hero { display:flex; flex-direction:column; }
+ #about .about-intro { padding:38px 8%; }
+ #about .about-portrait { height:auto; aspect-ratio:1141/594; }
+ #about .about-index { top:40px; right:8%; }
+ #about .about-info { padding:22px 8% 80px; }
+ #about .about-grid { grid-template-columns:1fr; gap:22px; }
+ #about .about-tools { max-width:330px; }
+ #about h3 { font-size:11px; }
+ #about .about-profile-list,#about .about-timeline p,#about .about-more p { font-size:12px; }
+}
+@media(prefers-reduced-motion:reduce) { #about .about-scroll { scroll-behavior:auto; } }

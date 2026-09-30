@@ -15,6 +15,7 @@
   <!--내부스타일연결-->
   <link rel="stylesheet" href="./fonts/web_fonts.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/about.css">
 </head>
 
 <body>
@@ -52,10 +53,78 @@
           한화면으로 스스로를 표현할 수 있는 내용으로 구성
           (사진,이미지,슬라이드,동영상,슬로건(문구),효과,...)-->
       </section>
-      <section id="about" class="section">
-        <p>about(profile):자신을 소개하는 영역, 개인정보 제외,
-          이력서에 표기되지 않는 내용, 주요내용들을 표기
-          (약력,기술(스킬),성향,취미,관심 - 인포그래픽)</p>
+      <section id="about" class="section" aria-labelledby="about-title">
+        <div class="about-scroll swiper-no-swiping" tabindex="0" aria-label="디자이너 소개">
+          <div class="about-hero">
+            <div class="about-intro">
+              <p class="about-eyebrow">DESIGNER</p>
+              <h2 id="about-title">Yelan<br>Park</h2>
+              <p class="about-lead">좋은 경험을 만드는 디자이너, 박예란입니다.</p>
+              <p class="about-description">사용자의 일상에 자연스럽게 스며드는<br>디지털 경험을 디자인합니다.<br>브랜드와 사용자가 더 가까워질 수 있는<br>따뜻하고 섬세한 인터페이스를 고민합니다.</p>
+              <p class="about-motto">Designing meaningful<br>experiences for a better tomorrow.</p>
+            </div>
+            <img class="about-portrait" src="./images/hero.png" alt="노트북 앞에서 디자인을 구상하는 디자이너">
+            <nav class="about-index" aria-label="소개 항목">
+              <a href="#about-profile"><span>01</span>PROFILE</a>
+              <a href="#about-skills"><span>02</span>SKILLS</a>
+              <a href="#about-experience"><span>03</span>EXPERIENCE</a>
+              <button type="button" data-about-contact><span>04</span>CONTACT</button>
+            </nav>
+          </div>
+          <div class="about-info">
+            <p class="about-info-label">Info</p>
+            <div class="about-grid">
+              <article id="about-profile" class="about-column">
+                <h3>PROFILE</h3>
+                <dl class="about-profile-list">
+                  <dt>이름</dt><dd>박예란</dd>
+                  <dt>생년월일</dt><dd>1997. 03. 12</dd>
+                  <dt>거주지</dt><dd>전주, 대한민국</dd>
+                  <dt>이메일</dt><dd><a href="mailto:yelan.park@example.com">yelan.park@example.com</a></dd>
+                  <dt>연락처</dt><dd><a href="tel:01012345678">010-1234-5678</a></dd>
+                  <dt>SNS</dt><dd class="about-social" aria-label="Facebook, X, Instagram, LinkedIn"><i class="xi-facebook" aria-hidden="true"></i><span aria-hidden="true">𝕏</span><i class="xi-instagram" aria-hidden="true"></i><i class="xi-linkedin" aria-hidden="true"></i></dd>
+                </dl>
+                <button class="about-contact" type="button" data-about-contact>CONTACT ME <span aria-hidden="true">→</span></button>
+              </article>
+              <article id="about-skills" class="about-column">
+                <h3>SKILLS</h3>
+                <h4>Design Tool</h4>
+                <ul class="about-tools">
+                  <li><img src="./images/App logo 198_1.png" alt=""><span>Figma</span></li>
+                  <li><img src="./images/App logo 142_2.png" alt=""><span>Adobe<br>Photoshop</span></li>
+                  <li><img src="./images/App logo 138_3.png" alt=""><span>Adobe<br>Illustrator</span></li>
+                  <li><img src="./images/App logo 140_4.png" alt=""><span>Adobe<br>After Effects</span></li>
+                </ul>
+                <h4>Core Skills</h4>
+                <ul class="about-skill-list">
+                  <li><span>UI/UX Design</span><meter min="0" max="100" value="90">90%</meter><span>90%</span></li>
+                  <li><span>Visual Design</span><meter min="0" max="100" value="85">85%</meter><span>85%</span></li>
+                  <li><span>Interaction Design</span><meter min="0" max="100" value="80">80%</meter><span>80%</span></li>
+                  <li><span>Branding</span><meter min="0" max="100" value="75">75%</meter><span>75%</span></li>
+                  <li><span>Prototyping</span><meter min="0" max="100" value="85">85%</meter><span>85%</span></li>
+                </ul>
+              </article>
+              <article id="about-experience" class="about-column">
+                <h3>EXPERIENCE</h3>
+                <ol class="about-timeline">
+                  <li><span class="about-year">2024 – Present</span><div><h4>프리랜스 디자이너</h4><p>브랜드, 웹/앱, 그래픽 등<br>다양한 프로젝트 진행</p></div></li>
+                  <li><span class="about-year">2022 – 2024</span><div><h4>(주) 모드스튜디오<br>UI/UX 디자이너</h4><p>웹 모바일 서비스 디자인<br>브랜드 비주얼 제작</p></div></li>
+                  <li><span class="about-year">2020 – 2022</span><div><h4>(주) 라이트컴퍼니<br>그래픽 디자이너</h4><p>온라인 콘텐츠 및 마케팅 디자인</p></div></li>
+                  <li><span class="about-year">2016 – 2020</span><div><h4>홍익대학교 시각디자인과</h4><p>학사 졸업</p></div></li>
+                </ol>
+              </article>
+              <article class="about-column about-more">
+                <h3>MORE ABOUT ME</h3>
+                <ul>
+                  <li><span aria-hidden="true">☕</span><p>좋은 커피와 조용한 공간에서<br>아이디어를 찾는 걸 좋아해요.</p></li>
+                  <li><span aria-hidden="true">▰</span><p>다양한 분야의 레퍼런스를 수집하고<br>기록하는 것을 즐깁니다.</p></li>
+                  <li><span aria-hidden="true">✦</span><p>새로운 경험을 통해<br>시야를 넓히는 것을 좋아합니다.</p></li>
+                </ul>
+                <img class="about-detail" src="./images/div.detail-card.png" alt="Small details make a big difference. 책과 꽃병이 놓인 따뜻한 공간">
+              </article>
+            </div>
+          </div>
+        </div>
       </section>
       <section id="works" class="section">
         <!--works(portfolio):작업한 프로젝트들을 진열하고, 
